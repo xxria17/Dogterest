@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.dhxxn.dogterestapp.ui.theme.DogterestAppTheme
 import com.dhxxn.dogterestapp.view.list.ListScreen
+import com.dhxxn.dogterestapp.view.list.ListViewModel
 import com.dhxxn.dogterestapp.view.random.RandomScreen
 import com.dhxxn.dogterestapp.view.random.RandomViewModel
 import com.dhxxn.dogterestapp.view.search.SearchScreen
@@ -28,6 +29,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val randomViewModel : RandomViewModel by viewModels()
+    private val listViewModel: ListViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,7 +52,7 @@ class MainActivity : ComponentActivity() {
                 .background(Color.White)
         ) {
             when(selectedIndex) {
-                0 -> ListScreen()
+                0 -> ListScreen(listViewModel)
                 1 -> RandomScreen(randomViewModel)
                 else -> SearchScreen()
             }
@@ -58,7 +60,6 @@ class MainActivity : ComponentActivity() {
             BottomMenuSection(
                 onClick = {
                     selectedIndex = it
-                    Log.d("MainActivity", "!!!!! clicked :$selectedIndex")
                 }
             )
         }

@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class RandomDogData(
+data class ResponseDogData(
     @field:Json(name = "message") val imageUrl: String,
     @field:Json(name = "status") val status: String
 )
