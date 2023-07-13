@@ -3,8 +3,8 @@ package com.dhxxn.dogterestapp.view.random
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
-import com.dhxxn.dogterestapp.view.base.BaseAction
-import com.dhxxn.dogterestapp.view.base.BaseState
+import com.dhxxn.dogterestapp.view.base.BaseUiAction
+import com.dhxxn.dogterestapp.view.base.BaseUiState
 import com.dhxxn.dogterestapp.view.base.BaseViewModel
 import com.dhxxn.domain.common.NetworkResponse
 import com.dhxxn.domain.common.model.Dog
@@ -41,6 +41,11 @@ class RandomViewModel @Inject constructor(
         }
     }
 
+    init {
+        initialData()
+        loadData()
+    }
+
     override fun loadData() {
         requestRandomDogData()
     }
@@ -49,17 +54,17 @@ class RandomViewModel @Inject constructor(
         state.randomImg.sendState { "" }
     }
 
-    override fun handleEvents(action: BaseAction) {
+    override fun handleEvents(action: BaseUiAction) {
         when (action) {
             is RandomContract.RandomAction.RequestNewImage -> {
-                onRefresh()
+                requestRandomDogData()
             }
         }
     }
 
-    override fun initialState(): BaseState {
+    override fun initialState(): BaseUiState {
         return RandomContract.RandomState(
-            randomImg = mutableStateOf("")
+            randomImg = mutableDogStateOf("")
         )
     }
 }

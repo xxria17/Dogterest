@@ -1,7 +1,7 @@
 package com.dhxxn.dogterestapp.view.base
 
-interface BaseState
+interface BaseUiState
 
-interface BaseEffect
+interface BaseUiEffect
 
-interface BaseAction
+interface BaseUiAction

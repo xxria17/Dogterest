@@ -2,12 +2,10 @@ package com.dhxxn.dogterestapp.view.list
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dhxxn.dogterestapp.view.base.BaseAction
-import com.dhxxn.dogterestapp.view.base.BaseState
+import com.dhxxn.dogterestapp.view.base.BaseUiAction
+import com.dhxxn.dogterestapp.view.base.BaseUiState
 import com.dhxxn.dogterestapp.view.base.BaseViewModel
-import com.dhxxn.dogterestapp.view.random.RandomContract
 import com.dhxxn.domain.common.NetworkResponse
 import com.dhxxn.domain.common.usecase.ListDogUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,6 +24,11 @@ class ListViewModel @Inject constructor(
 
     val state: ListContract.ListState
         get() = state()
+
+    init {
+        initialData()
+        loadData()
+    }
 
     private fun requestListDogData() {
         if (job != null && job?.isActive == true) return
@@ -52,13 +55,13 @@ class ListViewModel @Inject constructor(
         state.imageList.sendState { emptyList<String>() }
     }
 
-    override fun handleEvents(action: BaseAction) {
+    override fun handleEvents(action: BaseUiAction) {
 
     }
 
-    override fun initialState(): BaseState {
+    override fun initialState(): BaseUiState {
         return ListContract.ListState(
-            imageList = mutableStateListOf<String>()
+            imageList = mutableDogStateListOf<String>(emptyList())
         )
     }
 }

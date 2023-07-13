@@ -1,20 +1,20 @@
 package com.dhxxn.dogterestapp.view.random
 
-import androidx.compose.runtime.State
-import com.dhxxn.dogterestapp.view.base.BaseAction
-import com.dhxxn.dogterestapp.view.base.BaseEffect
-import com.dhxxn.dogterestapp.view.base.BaseState
+import com.dhxxn.dogterestapp.view.base.BaseUiAction
+import com.dhxxn.dogterestapp.view.base.BaseUiEffect
+import com.dhxxn.dogterestapp.view.base.BaseUiState
+import com.dhxxn.dogterestapp.view.base.DogState
 
 class RandomContract {
     data class RandomState(
-        val randomImg: State<String>
-    ): BaseState
+        val randomImg: DogState<String>
+    ): BaseUiState
 
-    sealed class RandomAction : BaseAction {
+    sealed class RandomAction : BaseUiAction {
         object RequestNewImage: RandomAction()
     }
 
-    sealed class RandomEffect: BaseEffect {
+    sealed class RandomEffect: BaseUiEffect {
         data class ToastMessage(val message: String): RandomEffect()
     }
 }

@@ -1,20 +1,20 @@
 package com.dhxxn.dogterestapp.view.list
 
-import androidx.compose.runtime.snapshots.SnapshotStateList
-import com.dhxxn.dogterestapp.view.base.BaseAction
-import com.dhxxn.dogterestapp.view.base.BaseEffect
-import com.dhxxn.dogterestapp.view.base.BaseState
+import com.dhxxn.dogterestapp.view.base.BaseUiAction
+import com.dhxxn.dogterestapp.view.base.BaseUiEffect
+import com.dhxxn.dogterestapp.view.base.BaseUiState
+import com.dhxxn.dogterestapp.view.base.DogStateList
 
 class ListContract {
     data class ListState(
-        val imageList: SnapshotStateList<String>
-    ): BaseState
+        val imageList: DogStateList<String>
+    ): BaseUiState
 
-    sealed class Action: BaseAction {
+    sealed class Action: BaseUiAction {
 
     }
 
-    sealed class Effect: BaseEffect {
+    sealed class Effect: BaseUiEffect {
 
     }
 }

@@ -52,8 +52,8 @@ class MainActivity : ComponentActivity() {
                 .background(Color.White)
         ) {
             when(selectedIndex) {
-                0 -> ListScreen(listViewModel)
-                1 -> RandomScreen(randomViewModel)
+                0 -> ListScreen(listViewModel).CreateContent()
+                1 -> RandomScreen(randomViewModel).CreateContent()
                 else -> SearchScreen()
             }
 

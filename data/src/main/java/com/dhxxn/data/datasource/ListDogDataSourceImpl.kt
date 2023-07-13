@@ -11,7 +11,7 @@ class ListDogDataSourceImpl @Inject constructor(
 ): ListDogDataSource {
     override suspend fun requestListDog(offset: Int): NetworkResponse<DogList> {
         return listMapper(
-            response= apiService.requestRandomDogList(),
+            response= apiService.requestRandomDogList(offset),
         )
     }
 }
