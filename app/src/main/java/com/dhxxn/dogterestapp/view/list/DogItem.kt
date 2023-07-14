@@ -7,8 +7,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.dhxxn.dogterestapp.R
 
 @Composable
 fun DogItem(
@@ -16,6 +18,7 @@ fun DogItem(
 ) {
     AsyncImage(
         model = imageUrl,
+        placeholder = painterResource(id = R.drawable.picture),
         contentDescription = "",
         contentScale = ContentScale.Crop,
         modifier = Modifier

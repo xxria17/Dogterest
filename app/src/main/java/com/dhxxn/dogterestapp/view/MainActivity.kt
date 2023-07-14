@@ -1,15 +1,12 @@
 package com.dhxxn.dogterestapp.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -23,6 +20,7 @@ import com.dhxxn.dogterestapp.view.list.ListViewModel
 import com.dhxxn.dogterestapp.view.random.RandomScreen
 import com.dhxxn.dogterestapp.view.random.RandomViewModel
 import com.dhxxn.dogterestapp.view.search.SearchScreen
+import com.dhxxn.dogterestapp.view.search.SearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,6 +28,7 @@ class MainActivity : ComponentActivity() {
 
     private val randomViewModel : RandomViewModel by viewModels()
     private val listViewModel: ListViewModel by viewModels()
+    private val searchViewModel: SearchViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -51,10 +50,10 @@ class MainActivity : ComponentActivity() {
                 .fillMaxSize()
                 .background(Color.White)
         ) {
-            when(selectedIndex) {
+            when (selectedIndex) {
                 0 -> ListScreen(listViewModel).CreateContent()
                 1 -> RandomScreen(randomViewModel).CreateContent()
-                else -> SearchScreen()
+                else -> SearchScreen(searchViewModel).CreateContent()
             }
 
             BottomMenuSection(

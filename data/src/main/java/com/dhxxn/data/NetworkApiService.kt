@@ -7,9 +7,12 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface NetworkApiService {
-    @GET("image/random")
+    @GET("breeds/image/random")
     suspend fun requestRandomImage(): Response<ResponseDogData>
 
-    @GET("image/random/{offset}")
+    @GET("breeds/image/random/{offset}")
     suspend fun requestRandomDogList(@Path(value = "offset") offset: Int): Response<ResponseDogsData>
+
+    @GET("breed/{breed}/images")
+    suspend fun requestSearchKeyword(@Path(value = "breed") keyword: String): Response<ResponseDogsData>
 }

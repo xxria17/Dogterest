@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val URL = "https://dog.ceo/api/breeds/"
+    private const val URL = "https://dog.ceo/api/"
 
     private val moshi = Moshi.Builder()
         .addLast(KotlinJsonAdapterFactory())
