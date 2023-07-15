@@ -26,7 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val randomViewModel : RandomViewModel by viewModels()
+    private val randomViewModel: RandomViewModel by viewModels()
     private val listViewModel: ListViewModel by viewModels()
     private val searchViewModel: SearchViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
         ) {
             when (selectedIndex) {
                 0 -> ListScreen(listViewModel).CreateContent()
-                1 -> RandomScreen(randomViewModel).CreateContent()
+                1 -> RandomScreen(randomViewModel, this@MainActivity).CreateContent()
                 else -> SearchScreen(searchViewModel).CreateContent()
             }
 
