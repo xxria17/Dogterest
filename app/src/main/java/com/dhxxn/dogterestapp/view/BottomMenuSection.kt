@@ -32,37 +32,33 @@ fun BoxScope.BottomMenuSection(
         verticalAlignment = Alignment.CenterVertically
     ){
         Image(
-            painter = painterResource(id = R.drawable.menu),
+            painter = painterResource(id = R.drawable.ic_home),
             contentDescription = "",
             modifier = Modifier
                 .size(30.dp)
                 .clickable {
                     onClick.invoke(0)
-                },
-            colorFilter = ColorFilter.tint(Color(0xff584630))
+                }
         )
 
         Image(
-            painter = painterResource(id = R.drawable.footprint),
+            painter = painterResource(id = R.drawable.ic_random),
             contentDescription = "",
             modifier = Modifier
                 .size(33.dp)
                 .clickable {
                     onClick.invoke(1)
-                },
-            colorFilter = ColorFilter.tint(Color(0xff584630))
+                }
         )
 
         Image(
-            painter = painterResource(id = R.drawable.search),
+            painter = painterResource(id = R.drawable.ic_search),
             contentDescription = "",
             modifier = Modifier
                 .size(27.dp)
                 .clickable {
                     onClick.invoke(2)
                 }
-            ,
-            colorFilter = ColorFilter.tint(Color(0xff584630))
         )
     }
 }

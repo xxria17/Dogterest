@@ -57,7 +57,7 @@ class SearchScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.search),
+                    painter = painterResource(id = R.drawable.ic_search),
                     contentDescription = "",
                     modifier = Modifier
                         .padding(start = 10.dp)

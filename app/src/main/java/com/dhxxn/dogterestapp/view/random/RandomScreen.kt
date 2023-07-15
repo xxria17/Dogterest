@@ -1,11 +1,15 @@
 package com.dhxxn.dogterestapp.view.random
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -31,13 +35,25 @@ class RandomScreen(
 
     @Composable
     override fun CreateContent() {
-        Box(
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White),
-            contentAlignment = Alignment.Center
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Row(
+                modifier = Modifier.fillMaxWidth()
+                    .height(40.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.main),
+                    contentDescription = null,
+                    modifier = Modifier.padding(start = 10.dp, top = 10.dp).size(30.dp)
+                )
+            }
+
             Column(
+                modifier = Modifier.padding(top = 40.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
@@ -46,7 +62,7 @@ class RandomScreen(
                     style = Typography.bodyLarge,
                     fontWeight = FontWeight.ExtraBold,
                     modifier = Modifier.padding(bottom = 40.dp),
-                    color = Color(0xff584630)
+                    color = Color.Black
                 )
 
                 AsyncImage(
@@ -62,10 +78,9 @@ class RandomScreen(
                 Box(
                     modifier = Modifier
                         .padding(top = 40.dp)
-                        .border(
-                            width = 2.dp,
-                            color = Color(0xff584630),
-                            shape = RoundedCornerShape(10.dp)
+                        .background(
+                            shape = RoundedCornerShape(10.dp),
+                            color = Color(0xFFB3E7FF)
                         )
                         .padding(10.dp)
                         .clickable {
@@ -75,7 +90,7 @@ class RandomScreen(
                     Text(
                         text = "다른 개 보기",
                         fontSize = 20.sp,
-                        color = Color(0xff584630)
+                        color = Color.White
                     )
                 }
             }
