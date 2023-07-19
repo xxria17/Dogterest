@@ -19,7 +19,7 @@ class LikeDogRepositoryImpl @Inject constructor(
         return dataSource.addLike(likeMapper(data))
     }
 
-    override fun deleteLike(id: Int): Completable {
-        return dataSource.deleteLike(id)
+    override fun deleteLike(data: Like): Completable {
+        return dataSource.deleteLike(likeMapper(data))
     }
 }

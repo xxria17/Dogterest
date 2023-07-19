@@ -21,7 +21,7 @@ class LikeDogDataSourceImpl @Inject constructor(
         return likeDao.addLike(like)
     }
 
-    override fun deleteLike(id: Int): Completable {
-        return likeDao.deleteLike(id)
+    override fun deleteLike(like: LikeData): Completable {
+        return likeDao.deleteLike(like)
     }
 }

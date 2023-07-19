@@ -4,6 +4,7 @@ import android.util.Log
 import com.dhxxn.dogterestapp.view.base.BaseUiAction
 import com.dhxxn.dogterestapp.view.base.BaseUiState
 import com.dhxxn.dogterestapp.view.base.BaseViewModel
+import com.dhxxn.domain.common.model.Like
 import com.dhxxn.domain.common.usecase.LikeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -51,8 +52,8 @@ class LikeViewModel @Inject constructor(
         )
     }
 
-    private fun deleteLike(id: Int) {
-        likeDataUseCase.deleteLikeDog(id)
+    private fun deleteLike(data: Like) {
+        likeDataUseCase.deleteLikeDog(data)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
@@ -72,7 +73,7 @@ class LikeViewModel @Inject constructor(
     override fun handleEvents(action: BaseUiAction) {
         when (action) {
             is LikeContract.LikeAction.DeleteLike -> {
-                deleteLike(action.id)
+                deleteLike(action.data)
             }
         }
     }

@@ -7,5 +7,5 @@ import io.reactivex.rxjava3.core.Single
 interface LikeDogRepository {
     fun requestListDogList(): Single<List<Like>>
     fun addLike(data: Like): Completable
-    fun deleteLike(id: Int): Completable
+    fun deleteLike(data: Like): Completable
 }

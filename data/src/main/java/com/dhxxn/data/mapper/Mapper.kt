@@ -60,6 +60,7 @@ fun likeMapper(
     data: Like
 ): LikeData {
     return LikeData(
+        data.id,
         data.imageUrl
     )
 }

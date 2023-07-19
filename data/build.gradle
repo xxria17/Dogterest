@@ -54,7 +54,8 @@ dependencies {
 
     // Room
     implementation "androidx.room:room-runtime:2.5.2"
-    annotationProcessor "androidx.room:room-compiler:2.5.2"
+    kapt "androidx.room:room-compiler:2.5.2"
+    implementation "androidx.room:room-rxjava3:2.5.2"
 
     // RxJava3
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'

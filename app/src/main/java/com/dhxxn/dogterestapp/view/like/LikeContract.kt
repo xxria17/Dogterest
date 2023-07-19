@@ -13,7 +13,7 @@ class LikeContract {
     ): BaseUiState
 
     sealed class LikeAction: BaseUiAction {
-        data class DeleteLike(val id: Int): LikeAction()
+        data class DeleteLike(val data: Like): LikeAction()
     }
 
     sealed class LikeEffect: BaseUiEffect {

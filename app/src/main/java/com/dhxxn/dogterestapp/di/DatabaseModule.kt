@@ -5,7 +5,6 @@ import androidx.room.Room
 import com.dhxxn.data.local.AppDatabase
 import com.dhxxn.data.local.AppDatabase.Companion.DB_NAME
 import com.dhxxn.data.local.LikeDao
-import com.dhxxn.data.mapper.ListTypeConverter
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -31,7 +30,6 @@ object DatabaseModule {
     fun provideDatabase(application: Application): AppDatabase {
         return Room.databaseBuilder(application, AppDatabase::class.java, DB_NAME)
             .fallbackToDestructiveMigration()
-            .addTypeConverter(ListTypeConverter(provideGson()))
             .allowMainThreadQueries()
             .build()
     }

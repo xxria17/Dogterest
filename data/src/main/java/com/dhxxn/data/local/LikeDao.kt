@@ -18,5 +18,5 @@ interface LikeDao {
     fun addLike(data: LikeData): Completable
 
     @Delete
-    fun deleteLike(id: Int): Completable
+    fun deleteLike(data: LikeData): Completable
 }

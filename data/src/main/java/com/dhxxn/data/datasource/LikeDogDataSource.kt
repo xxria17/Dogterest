@@ -10,5 +10,5 @@ interface LikeDogDataSource {
 
     fun addLike(like: LikeData): Completable
 
-    fun deleteLike(id: Int): Completable
+    fun deleteLike(like: LikeData): Completable
 }

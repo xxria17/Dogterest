@@ -16,6 +16,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -53,7 +54,7 @@ class SearchScreen(
                     .padding(10.dp)
                     .fillMaxWidth()
                     .height(50.dp)
-                    .background(color = Color(0xFFFF6F00), shape = RoundedCornerShape(5.dp)),
+                    .background(color = Color(0xff1d67c2).copy(alpha = 0.6f), shape = RoundedCornerShape(5.dp)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
@@ -65,12 +66,12 @@ class SearchScreen(
                     colorFilter = ColorFilter.tint(Color.White)
                 )
 
-                Text(
-                    text = "품종별 검색하기",
-                    modifier = Modifier.padding(start = 15.dp),
-                    fontSize = 18.sp,
-                    color = Color.White,
-                    fontWeight = FontWeight.Bold
+                BasicTextField(
+                    value = viewModel.state.searchKeyword.value(),
+                    onValueChange = {
+                        viewModel.sendAction(SearchContract.SearchAction.InputKeyword(it))
+                    },
+                    modifier = Modifier
                 )
             }
 

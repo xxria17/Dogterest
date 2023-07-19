@@ -16,6 +16,8 @@ class SearchContract {
 
     sealed class SearchAction: BaseUiAction {
         data class ClickBreed(val breed: String): SearchAction()
+
+        data class InputKeyword(val keyword: String): SearchAction()
     }
 
     sealed class SearchEffect: BaseUiEffect {
