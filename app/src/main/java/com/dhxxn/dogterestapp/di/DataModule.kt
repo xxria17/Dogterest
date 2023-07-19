@@ -1,14 +1,18 @@
 package com.dhxxn.dogterestapp.di
 
+import com.dhxxn.data.datasource.LikeDogDataSource
+import com.dhxxn.data.datasource.LikeDogDataSourceImpl
 import com.dhxxn.data.datasource.ListDogDataSource
 import com.dhxxn.data.datasource.ListDogDataSourceImpl
 import com.dhxxn.data.datasource.RandomDogDataSource
 import com.dhxxn.data.datasource.RandomDogDataSourceImpl
 import com.dhxxn.data.datasource.SearchDataSource
 import com.dhxxn.data.datasource.SearchDataSourceImpl
+import com.dhxxn.data.repository.LikeDogRepositoryImpl
 import com.dhxxn.data.repository.ListDogRepositoryImpl
 import com.dhxxn.data.repository.RandomDogRepositoryImpl
 import com.dhxxn.data.repository.SearchRepositoryImpl
+import com.dhxxn.domain.common.repository.LikeDogRepository
 import com.dhxxn.domain.common.repository.ListDogRepository
 import com.dhxxn.domain.common.repository.RandomDogRepository
 import com.dhxxn.domain.common.repository.SearchRepository
@@ -57,4 +61,16 @@ abstract class DataModule {
     abstract fun bindSearchDataSource(
         source: SearchDataSourceImpl
     ): SearchDataSource
+
+    @Binds
+    @Singleton
+    abstract fun bindLikeRepository(
+        repositoryImpl: LikeDogRepositoryImpl
+    ): LikeDogRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindLikeDataSource(
+        source: LikeDogDataSourceImpl
+    ): LikeDogDataSource
 }

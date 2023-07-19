@@ -1,10 +1,8 @@
 package com.dhxxn.data.model
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class ResponseDogData(
-    @field:Json(name = "message") val imageUrl: String,
-    @field:Json(name = "status") val status: String
+    @SerializedName("message") val imageUrl: String,
+    @SerializedName("status") val status: String
 )

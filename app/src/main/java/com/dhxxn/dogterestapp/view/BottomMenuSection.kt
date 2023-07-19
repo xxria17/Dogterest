@@ -52,12 +52,22 @@ fun BoxScope.BottomMenuSection(
         )
 
         Image(
+            painter = painterResource(id = R.drawable.ic_heart),
+            contentDescription = "",
+            modifier = Modifier
+                .size(33.dp)
+                .clickable {
+                    onClick.invoke(2)
+                }
+        )
+
+        Image(
             painter = painterResource(id = R.drawable.ic_search),
             contentDescription = "",
             modifier = Modifier
                 .size(27.dp)
                 .clickable {
-                    onClick.invoke(2)
+                    onClick.invoke(3)
                 }
         )
     }

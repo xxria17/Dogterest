@@ -1,15 +1,14 @@
 package com.dhxxn.dogterestapp.di
 
 import com.dhxxn.data.NetworkApiService
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.dhxxn.dogterestapp.di.DatabaseModule.provideGson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -17,10 +16,6 @@ import javax.inject.Singleton
 object NetworkModule {
 
     private const val URL = "https://dog.ceo/api/"
-
-    private val moshi = Moshi.Builder()
-        .addLast(KotlinJsonAdapterFactory())
-        .build()
 
     @Provides
     @Singleton
@@ -36,7 +31,7 @@ object NetworkModule {
         return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(URL)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addConverterFactory(GsonConverterFactory.create(provideGson()))
             .build()
     }
 

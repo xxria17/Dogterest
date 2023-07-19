@@ -15,6 +15,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.dhxxn.dogterestapp.ui.theme.DogterestAppTheme
+import com.dhxxn.dogterestapp.view.like.LikeScreen
+import com.dhxxn.dogterestapp.view.like.LikeViewModel
 import com.dhxxn.dogterestapp.view.list.ListScreen
 import com.dhxxn.dogterestapp.view.list.ListViewModel
 import com.dhxxn.dogterestapp.view.random.RandomScreen
@@ -28,6 +30,7 @@ class MainActivity : ComponentActivity() {
 
     private val randomViewModel: RandomViewModel by viewModels()
     private val listViewModel: ListViewModel by viewModels()
+    private val likeViewModel: LikeViewModel by viewModels()
     private val searchViewModel: SearchViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +56,7 @@ class MainActivity : ComponentActivity() {
             when (selectedIndex) {
                 0 -> ListScreen(listViewModel).CreateContent()
                 1 -> RandomScreen(randomViewModel, this@MainActivity).CreateContent()
+                2 -> LikeScreen(likeViewModel).CreateContent()
                 else -> SearchScreen(searchViewModel).CreateContent()
             }
 

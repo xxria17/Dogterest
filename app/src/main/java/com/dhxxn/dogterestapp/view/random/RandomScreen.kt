@@ -91,7 +91,7 @@ class RandomScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "오늘의 개",
+                    text = "🐶보고 힐링하개🐶",
                     fontSize = 35.sp,
                     style = Typography.bodyLarge,
                     fontWeight = FontWeight.ExtraBold,
@@ -130,7 +130,7 @@ class RandomScreen(
                         .padding(top = 40.dp)
                         .background(
                             shape = RoundedCornerShape(10.dp),
-                            color = Color(0xFFB3E7FF)
+                            color = Color(0xff1d67c2)
                         )
                         .padding(10.dp)
                         .clickable {
