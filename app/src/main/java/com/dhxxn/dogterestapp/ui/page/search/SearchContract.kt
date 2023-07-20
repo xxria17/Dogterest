@@ -1,11 +1,11 @@
-package com.dhxxn.dogterestapp.view.search
+package com.dhxxn.dogterestapp.ui.page.search
 
 import androidx.compose.ui.graphics.Color
-import com.dhxxn.dogterestapp.view.base.BaseUiAction
-import com.dhxxn.dogterestapp.view.base.BaseUiEffect
-import com.dhxxn.dogterestapp.view.base.BaseUiState
-import com.dhxxn.dogterestapp.view.base.DogState
-import com.dhxxn.dogterestapp.view.base.DogStateList
+import com.dhxxn.dogterestapp.ui.base.BaseUiAction
+import com.dhxxn.dogterestapp.ui.base.BaseUiEffect
+import com.dhxxn.dogterestapp.ui.base.BaseUiState
+import com.dhxxn.dogterestapp.ui.base.DogState
+import com.dhxxn.dogterestapp.ui.base.DogStateList
 
 class SearchContract {
 

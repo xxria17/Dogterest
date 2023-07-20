@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.base
+package com.dhxxn.dogterestapp.ui.base
 
 interface BaseUiState
 

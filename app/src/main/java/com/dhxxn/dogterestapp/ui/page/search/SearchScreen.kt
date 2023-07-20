@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.search
+package com.dhxxn.dogterestapp.ui.page.search
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -43,9 +43,9 @@ import com.dhxxn.dogterestapp.R
 import com.dhxxn.dogterestapp.ui.theme.BaseTextFieldColors
 import com.dhxxn.dogterestapp.ui.theme.Blue
 import com.dhxxn.dogterestapp.ui.theme.Typography
-import com.dhxxn.dogterestapp.view.base.BaseScreen
-import com.dhxxn.dogterestapp.view.list.DogItem
-import com.dhxxn.dogterestapp.view.list.StaggeredVerticalGrid
+import com.dhxxn.dogterestapp.ui.base.BaseScreen
+import com.dhxxn.dogterestapp.ui.page.list.DogItem
+import com.dhxxn.dogterestapp.ui.page.list.StaggeredVerticalGrid
 import kotlin.random.Random
 
 class SearchScreen(

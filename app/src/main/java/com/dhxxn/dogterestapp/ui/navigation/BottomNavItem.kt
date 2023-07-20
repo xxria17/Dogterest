@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view
+package com.dhxxn.dogterestapp.ui.navigation
 
 import android.annotation.SuppressLint
 import androidx.annotation.IdRes

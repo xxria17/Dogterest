@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.base
+package com.dhxxn.dogterestapp.ui.base
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State

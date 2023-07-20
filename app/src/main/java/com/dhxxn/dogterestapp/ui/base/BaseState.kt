@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.base
+package com.dhxxn.dogterestapp.ui.base
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.StateFlow

@@ -1,9 +1,9 @@
-package com.dhxxn.dogterestapp.view.random
+package com.dhxxn.dogterestapp.ui.page.random
 
-import com.dhxxn.dogterestapp.view.base.BaseUiAction
-import com.dhxxn.dogterestapp.view.base.BaseUiEffect
-import com.dhxxn.dogterestapp.view.base.BaseUiState
-import com.dhxxn.dogterestapp.view.base.DogState
+import com.dhxxn.dogterestapp.ui.base.BaseUiAction
+import com.dhxxn.dogterestapp.ui.base.BaseUiEffect
+import com.dhxxn.dogterestapp.ui.base.BaseUiState
+import com.dhxxn.dogterestapp.ui.base.DogState
 
 class RandomContract {
     data class RandomState(

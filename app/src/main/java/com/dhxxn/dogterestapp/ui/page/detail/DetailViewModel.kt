@@ -1,8 +1,8 @@
-package com.dhxxn.dogterestapp.view.detail
+package com.dhxxn.dogterestapp.ui.page.detail
 
-import com.dhxxn.dogterestapp.view.base.BaseUiAction
-import com.dhxxn.dogterestapp.view.base.BaseUiState
-import com.dhxxn.dogterestapp.view.base.BaseViewModel
+import com.dhxxn.dogterestapp.ui.base.BaseUiAction
+import com.dhxxn.dogterestapp.ui.base.BaseUiState
+import com.dhxxn.dogterestapp.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

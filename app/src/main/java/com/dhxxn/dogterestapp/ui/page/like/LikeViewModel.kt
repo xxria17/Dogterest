@@ -1,9 +1,9 @@
-package com.dhxxn.dogterestapp.view.like
+package com.dhxxn.dogterestapp.ui.page.like
 
 import android.util.Log
-import com.dhxxn.dogterestapp.view.base.BaseUiAction
-import com.dhxxn.dogterestapp.view.base.BaseUiState
-import com.dhxxn.dogterestapp.view.base.BaseViewModel
+import com.dhxxn.dogterestapp.ui.base.BaseUiAction
+import com.dhxxn.dogterestapp.ui.base.BaseUiState
+import com.dhxxn.dogterestapp.ui.base.BaseViewModel
 import com.dhxxn.domain.common.model.Like
 import com.dhxxn.domain.common.usecase.LikeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

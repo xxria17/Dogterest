@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.like
+package com.dhxxn.dogterestapp.ui.page.like
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -19,9 +19,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.dhxxn.dogterestapp.R
-import com.dhxxn.dogterestapp.view.base.BaseScreen
-import com.dhxxn.dogterestapp.view.list.DogItem
-import com.dhxxn.dogterestapp.view.list.StaggeredVerticalGrid
+import com.dhxxn.dogterestapp.ui.base.BaseScreen
+import com.dhxxn.dogterestapp.ui.page.list.DogItem
+import com.dhxxn.dogterestapp.ui.page.list.StaggeredVerticalGrid
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 

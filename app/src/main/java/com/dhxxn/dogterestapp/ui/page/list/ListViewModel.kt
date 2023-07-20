@@ -1,11 +1,11 @@
-package com.dhxxn.dogterestapp.view.list
+package com.dhxxn.dogterestapp.ui.page.list
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.viewModelScope
-import com.dhxxn.dogterestapp.view.base.BaseUiAction
-import com.dhxxn.dogterestapp.view.base.BaseUiState
-import com.dhxxn.dogterestapp.view.base.BaseViewModel
+import com.dhxxn.dogterestapp.ui.base.BaseUiAction
+import com.dhxxn.dogterestapp.ui.base.BaseUiState
+import com.dhxxn.dogterestapp.ui.base.BaseViewModel
 import com.dhxxn.domain.common.NetworkResponse
 import com.dhxxn.domain.common.usecase.ListDogUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

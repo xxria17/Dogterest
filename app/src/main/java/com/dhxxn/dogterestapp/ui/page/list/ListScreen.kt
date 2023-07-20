@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.list
+package com.dhxxn.dogterestapp.ui.page.list
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.dhxxn.dogterestapp.R
-import com.dhxxn.dogterestapp.view.base.BaseScreen
+import com.dhxxn.dogterestapp.ui.base.BaseScreen
 
 class ListScreen(
     private val viewModel: ListViewModel

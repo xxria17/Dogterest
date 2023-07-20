@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.random
+package com.dhxxn.dogterestapp.ui.page.random
 
 import android.Manifest
 import android.app.Activity
@@ -51,7 +51,7 @@ import androidx.core.content.ContextCompat.checkSelfPermission
 import coil.compose.AsyncImage
 import com.dhxxn.dogterestapp.R
 import com.dhxxn.dogterestapp.ui.theme.Typography
-import com.dhxxn.dogterestapp.view.base.BaseScreen
+import com.dhxxn.dogterestapp.ui.base.BaseScreen
 import java.text.SimpleDateFormat
 import java.util.Date
 

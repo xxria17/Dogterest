@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.list
+package com.dhxxn.dogterestapp.ui.page.list
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding

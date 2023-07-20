@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view.list
+package com.dhxxn.dogterestapp.ui.page.list
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

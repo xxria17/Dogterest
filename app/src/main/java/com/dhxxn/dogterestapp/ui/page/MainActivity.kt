@@ -1,4 +1,4 @@
-package com.dhxxn.dogterestapp.view
+package com.dhxxn.dogterestapp.ui.page
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -29,14 +29,15 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.dhxxn.dogterestapp.ui.theme.DogterestAppTheme
 import com.dhxxn.dogterestapp.ui.theme.Red
-import com.dhxxn.dogterestapp.view.like.LikeScreen
-import com.dhxxn.dogterestapp.view.like.LikeViewModel
-import com.dhxxn.dogterestapp.view.list.ListScreen
-import com.dhxxn.dogterestapp.view.list.ListViewModel
-import com.dhxxn.dogterestapp.view.random.RandomScreen
-import com.dhxxn.dogterestapp.view.random.RandomViewModel
-import com.dhxxn.dogterestapp.view.search.SearchScreen
-import com.dhxxn.dogterestapp.view.search.SearchViewModel
+import com.dhxxn.dogterestapp.ui.page.like.LikeScreen
+import com.dhxxn.dogterestapp.ui.page.like.LikeViewModel
+import com.dhxxn.dogterestapp.ui.page.list.ListScreen
+import com.dhxxn.dogterestapp.ui.page.list.ListViewModel
+import com.dhxxn.dogterestapp.ui.page.random.RandomScreen
+import com.dhxxn.dogterestapp.ui.page.random.RandomViewModel
+import com.dhxxn.dogterestapp.ui.page.search.SearchScreen
+import com.dhxxn.dogterestapp.ui.page.search.SearchViewModel
+import com.dhxxn.dogterestapp.ui.navigation.BottomNavItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -69,13 +70,13 @@ class MainActivity : ComponentActivity() {
             Box(
                 modifier = Modifier.padding(_innerPadding)
             ) {
-                BottomNavigationGraph(navController = navController)
+                NavigationGraph(navController = navController)
             }
         }
     }
 
     @Composable
-    fun BottomNavigationGraph(navController: NavHostController) {
+    fun NavigationGraph(navController: NavHostController) {
         NavHost(navController = navController, startDestination = BottomNavItem.List.route) {
             composable(BottomNavItem.List.route) {
                 ListScreen(listViewModel).CreateContent()
@@ -95,7 +96,12 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("ResourceType")
     @Composable
     fun BottomNavigationBar(navController: NavHostController) {
-        val navItems = listOf<BottomNavItem>(BottomNavItem.List, BottomNavItem.Random, BottomNavItem.Like, BottomNavItem.Search)
+        val navItems = listOf<BottomNavItem>(
+            BottomNavItem.List,
+            BottomNavItem.Random,
+            BottomNavItem.Like,
+            BottomNavItem.Search
+        )
 
         NavigationBar(
             containerColor = Color.White,

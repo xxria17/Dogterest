@@ -1,9 +1,9 @@
-package com.dhxxn.dogterestapp.view.like
+package com.dhxxn.dogterestapp.ui.page.like
 
-import com.dhxxn.dogterestapp.view.base.BaseUiAction
-import com.dhxxn.dogterestapp.view.base.BaseUiEffect
-import com.dhxxn.dogterestapp.view.base.BaseUiState
-import com.dhxxn.dogterestapp.view.base.DogStateList
+import com.dhxxn.dogterestapp.ui.base.BaseUiAction
+import com.dhxxn.dogterestapp.ui.base.BaseUiEffect
+import com.dhxxn.dogterestapp.ui.base.BaseUiState
+import com.dhxxn.dogterestapp.ui.base.DogStateList
 import com.dhxxn.domain.common.model.Like
 
 class LikeContract {

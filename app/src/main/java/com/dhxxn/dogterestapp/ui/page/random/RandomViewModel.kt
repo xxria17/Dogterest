@@ -1,11 +1,11 @@
-package com.dhxxn.dogterestapp.view.random
+package com.dhxxn.dogterestapp.ui.page.random
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
-import com.dhxxn.dogterestapp.view.base.BaseUiAction
-import com.dhxxn.dogterestapp.view.base.BaseUiState
-import com.dhxxn.dogterestapp.view.base.BaseViewModel
+import com.dhxxn.dogterestapp.ui.base.BaseUiAction
+import com.dhxxn.dogterestapp.ui.base.BaseUiState
+import com.dhxxn.dogterestapp.ui.base.BaseViewModel
 import com.dhxxn.domain.common.NetworkResponse
 import com.dhxxn.domain.common.model.Dog
 import com.dhxxn.domain.common.usecase.RandomDogUseCase
