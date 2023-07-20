@@ -15,9 +15,10 @@
 ### 사용한 라이브러리
 - Jetpack Compose
 - JetPack Navigation
-- Retrofit2 + OkHttp3 + Moshi
+- Retrofit2 + OkHttp3 + Gson
 - Coroutine + Flow
 - Hilt
+- Room
 
 ## 🐶 사용 Api
 https://dog.ceo/dog-api/
