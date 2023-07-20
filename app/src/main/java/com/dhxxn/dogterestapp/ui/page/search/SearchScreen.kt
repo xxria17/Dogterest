@@ -48,6 +48,8 @@ import com.dhxxn.dogterestapp.ui.base.BaseScreen
 import com.dhxxn.dogterestapp.ui.navigation.Screens
 import com.dhxxn.dogterestapp.ui.page.list.DogItem
 import com.dhxxn.dogterestapp.ui.page.list.StaggeredVerticalGrid
+import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
 import kotlin.random.Random
 
 class SearchScreen(
@@ -212,9 +214,10 @@ class SearchScreen(
                                 DogItem(
                                     imageUrl = _dog,
                                     onClick = { _imageUrl ->
+                                        val encodedUrl = URLEncoder.encode(_imageUrl , StandardCharsets.UTF_8.toString())
                                         navController.navigate(
                                             Screens.DetailScreen.withImageUrl(
-                                                _imageUrl
+                                                encodedUrl
                                             )
                                         )
                                     }

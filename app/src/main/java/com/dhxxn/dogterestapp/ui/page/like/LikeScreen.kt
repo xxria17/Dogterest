@@ -26,6 +26,8 @@ import com.dhxxn.dogterestapp.ui.page.list.DogItem
 import com.dhxxn.dogterestapp.ui.page.list.StaggeredVerticalGrid
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
+import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
 
 class LikeScreen (
     private val viewModel: LikeViewModel,
@@ -79,9 +81,10 @@ class LikeScreen (
                             DogItem(
                                 imageUrl = _dog.imageUrl,
                                 onClick = { _imageUrl ->
+                                    val encodedUrl = URLEncoder.encode(_imageUrl , StandardCharsets.UTF_8.toString())
                                     navController.navigate(
                                         Screens.DetailScreen.withImageUrl(
-                                            _imageUrl
+                                            encodedUrl
                                         )
                                     )
                                 }
