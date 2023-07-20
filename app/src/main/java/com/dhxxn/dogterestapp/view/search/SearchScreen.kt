@@ -65,7 +65,6 @@ class SearchScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White)
-                .padding(bottom = 50.dp)
         ) {
             Row(
                 Modifier.fillMaxWidth()
@@ -165,7 +164,7 @@ class SearchScreen(
                        contentPadding = PaddingValues(5.dp),
                        state = rememberLazyGridState()
                    ) {
-                       items(breedList.size) {
+                       items(7) {
                            val text = breedList[it]
                            val color = colorList[it]
 

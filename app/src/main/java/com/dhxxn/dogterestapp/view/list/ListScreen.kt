@@ -40,9 +40,7 @@ class ListScreen(
                    modifier = Modifier.padding(start = 10.dp, top = 10.dp).size(30.dp)
                )
             }
-            LazyColumn(
-                modifier = Modifier.padding(bottom = 50.dp)
-            ) {
+            LazyColumn {
                 item {
                     StaggeredVerticalGrid(
                         maxColumnWidth = 220.dp,

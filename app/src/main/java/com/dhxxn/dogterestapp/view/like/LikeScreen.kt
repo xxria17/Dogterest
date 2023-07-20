@@ -66,9 +66,7 @@ class LikeScreen (
                         .size(30.dp)
                 )
             }
-            LazyColumn(
-                modifier = Modifier.padding(bottom = 50.dp)
-            ) {
+            LazyColumn {
                 item {
                     StaggeredVerticalGrid(
                         maxColumnWidth = 220.dp,

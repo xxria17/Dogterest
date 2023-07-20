@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Dogterest</string>
+    <string name="list_screen">목록</string>
+    <string name="randomg_screen">랜덤</string>
+    <string name="like_screen">애정</string>
+    <string name="search_screen">검색</string>
 </resources>
