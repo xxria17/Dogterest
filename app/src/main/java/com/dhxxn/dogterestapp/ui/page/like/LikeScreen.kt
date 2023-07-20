@@ -18,15 +18,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.dhxxn.dogterestapp.R
 import com.dhxxn.dogterestapp.ui.base.BaseScreen
+import com.dhxxn.dogterestapp.ui.navigation.Screens
 import com.dhxxn.dogterestapp.ui.page.list.DogItem
 import com.dhxxn.dogterestapp.ui.page.list.StaggeredVerticalGrid
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 
 class LikeScreen (
-    private val viewModel: LikeViewModel
+    private val viewModel: LikeViewModel,
+    private val navController: NavController
 ): BaseScreen() {
 
     @Composable
@@ -73,7 +76,16 @@ class LikeScreen (
                         modifier = Modifier.padding(4.dp)
                     ) {
                         viewModel.state.likeImgList.value().forEach { _dog ->
-                            DogItem(imageUrl = _dog.imageUrl)
+                            DogItem(
+                                imageUrl = _dog.imageUrl,
+                                onClick = { _imageUrl ->
+                                    navController.navigate(
+                                        Screens.DetailScreen.withImageUrl(
+                                            _imageUrl
+                                        )
+                                    )
+                                }
+                            )
                         }
                     }
                 }

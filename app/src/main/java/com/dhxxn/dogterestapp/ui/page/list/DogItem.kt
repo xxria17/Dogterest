@@ -1,5 +1,6 @@
 package com.dhxxn.dogterestapp.ui.page.list
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,7 +15,8 @@ import com.dhxxn.dogterestapp.R
 
 @Composable
 fun DogItem(
-    imageUrl: String
+    imageUrl: String,
+    onClick: (String) -> Unit
 ) {
     AsyncImage(
         model = imageUrl,
@@ -25,5 +27,8 @@ fun DogItem(
             .fillMaxWidth()
             .padding(5.dp)
             .clip(RoundedCornerShape(10.dp))
+            .clickable {
+                onClick.invoke(imageUrl)
+            }
     )
 }

@@ -23,10 +23,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.dhxxn.dogterestapp.ui.theme.DogterestAppTheme
 import com.dhxxn.dogterestapp.ui.theme.Red
 import com.dhxxn.dogterestapp.ui.page.like.LikeScreen
@@ -38,6 +40,10 @@ import com.dhxxn.dogterestapp.ui.page.random.RandomViewModel
 import com.dhxxn.dogterestapp.ui.page.search.SearchScreen
 import com.dhxxn.dogterestapp.ui.page.search.SearchViewModel
 import com.dhxxn.dogterestapp.ui.navigation.BottomNavItem
+import com.dhxxn.dogterestapp.ui.navigation.IMAGE_URL_ARG
+import com.dhxxn.dogterestapp.ui.navigation.Screens
+import com.dhxxn.dogterestapp.ui.page.detail.DetailScreen
+import com.dhxxn.dogterestapp.ui.page.detail.DetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,6 +53,8 @@ class MainActivity : ComponentActivity() {
     private val listViewModel: ListViewModel by viewModels()
     private val likeViewModel: LikeViewModel by viewModels()
     private val searchViewModel: SearchViewModel by viewModels()
+    private val detailViewModel: DetailViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -79,16 +87,28 @@ class MainActivity : ComponentActivity() {
     fun NavigationGraph(navController: NavHostController) {
         NavHost(navController = navController, startDestination = BottomNavItem.List.route) {
             composable(BottomNavItem.List.route) {
-                ListScreen(listViewModel).CreateContent()
+                ListScreen(listViewModel, navController).CreateContent()
             }
             composable(BottomNavItem.Random.route) {
                 RandomScreen(randomViewModel, this@MainActivity).CreateContent()
             }
             composable(BottomNavItem.Like.route) {
-                LikeScreen(likeViewModel).CreateContent()
+                LikeScreen(likeViewModel, navController).CreateContent()
             }
             composable(BottomNavItem.Search.route) {
-                SearchScreen(searchViewModel).CreateContent()
+                SearchScreen(searchViewModel, navController).CreateContent()
+            }
+
+            composable(
+                route = Screens.DetailScreen.route,
+                arguments = listOf(
+                    navArgument(IMAGE_URL_ARG) {
+                        type = NavType.StringType
+                    }
+                )
+            ) { _backStackEntry ->
+                val imageUrl = _backStackEntry.arguments!!.getString(IMAGE_URL_ARG)!!
+                DetailScreen(detailViewModel, imageUrl, navController).CreateContent()
             }
         }
     }

@@ -18,4 +18,8 @@ class LikeUseCase @Inject constructor(
         return likeDogRepository.deleteLike(data)
     }
 
+    fun addLikeDog(data: Like): Completable {
+        return likeDogRepository.addLike(data)
+    }
+
 }

@@ -39,17 +39,20 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.dhxxn.dogterestapp.R
 import com.dhxxn.dogterestapp.ui.theme.BaseTextFieldColors
 import com.dhxxn.dogterestapp.ui.theme.Blue
 import com.dhxxn.dogterestapp.ui.theme.Typography
 import com.dhxxn.dogterestapp.ui.base.BaseScreen
+import com.dhxxn.dogterestapp.ui.navigation.Screens
 import com.dhxxn.dogterestapp.ui.page.list.DogItem
 import com.dhxxn.dogterestapp.ui.page.list.StaggeredVerticalGrid
 import kotlin.random.Random
 
 class SearchScreen(
-    private val viewModel: SearchViewModel
+    private val viewModel: SearchViewModel,
+    private val navController: NavController
 ): BaseScreen() {
 
     @OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
@@ -206,7 +209,16 @@ class SearchScreen(
                             modifier = Modifier.padding(4.dp)
                         ) {
                             viewModel.state.searchResult.value().forEach { _dog ->
-                                DogItem(imageUrl = _dog)
+                                DogItem(
+                                    imageUrl = _dog,
+                                    onClick = { _imageUrl ->
+                                        navController.navigate(
+                                            Screens.DetailScreen.withImageUrl(
+                                                _imageUrl
+                                            )
+                                        )
+                                    }
+                                )
                             }
                         }
                     }
