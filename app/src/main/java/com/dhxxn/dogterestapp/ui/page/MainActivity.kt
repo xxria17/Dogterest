@@ -2,6 +2,7 @@ package com.dhxxn.dogterestapp.ui.page
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -17,6 +18,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -69,10 +73,22 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun MainContent() {
         val navController = rememberNavController()
+        var showBottomBar by rememberSaveable {
+            mutableStateOf(true)
+        }
+        val navBackStackEntry by navController.currentBackStackEntryAsState()
+
+        showBottomBar = when(navBackStackEntry?.destination?.route) {
+            Screens.DetailScreen.route -> false
+            else -> true
+        }
+
         Scaffold(
             modifier = Modifier,
             bottomBar = {
-                BottomNavigationBar(navController = navController)
+                if (showBottomBar) {
+                    BottomNavigationBar(navController = navController)
+                }
             }
         ) { _innerPadding ->
             Box(
