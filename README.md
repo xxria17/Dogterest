@@ -1,5 +1,15 @@
 # Dogterest
+<div class="container" style="width:100vw;">
+<p align="center">
+<img src="https://github.com/xxria17/Dogterest/assets/41279544/f1cdd9ad-f55d-42a8-9abe-7fed4763f254" width="300" height="300"/>
+</p>
+</div>
+<div class="container" style="width:100vw;">
+<p align="center">
 모든 개들을 보며 힐링할 수 있는 핀터레스트 개.ver 🐶
+</p>
+</div>
+
 <br><br>
 
 ## 📱 실행 화면
