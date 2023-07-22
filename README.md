@@ -3,8 +3,11 @@
 <br><br>
 
 ## 📱 실행 화면
-<img src="https://github.com/xxria17/Dogterest/assets/41279544/1d84fc9d-ff7e-4809-914b-1d8c4de47f0e" width="300" height="600"/>
-<img src="https://github.com/xxria17/Dogterest/assets/41279544/66ec6fa8-0f21-4b24-883f-046d5d01e7c5" width="300" height="600"/>
+<img src="https://github.com/xxria17/Dogterest/assets/41279544/4ce399ba-a55e-414f-adeb-e79a16d0efd2" width="300" height="600"/>
+<img src="https://github.com/xxria17/Dogterest/assets/41279544/f9f2e3b6-f70e-4a0d-addf-f1ccb3875994" width="300" height="600"/>
+<img src="https://github.com/xxria17/Dogterest/assets/41279544/5b108c23-d8b4-4113-86c7-21c45495f284" width="300" height="600"/>
+<img src="https://github.com/xxria17/Dogterest/assets/41279544/0043b269-d86f-4513-84f6-4307e0b1972a" width="300" height="600"/>
+<img src="https://github.com/xxria17/Dogterest/assets/41279544/db6a77b8-0ea7-4864-8e11-aed325533774" width="300" height="600"/>
 
 
 ## 📋 스킬
